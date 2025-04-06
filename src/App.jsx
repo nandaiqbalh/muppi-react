@@ -105,7 +105,7 @@ function App() {
     }, []);
 
     return (
-        <main className="pattern">
+        <main>
             <div className="wrapper">
                 <SpeedInsights/>
                 <Analytics/>
