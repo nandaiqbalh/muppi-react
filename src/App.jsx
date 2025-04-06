@@ -5,6 +5,7 @@ import Spinner from "./components/Spinner.jsx";
 import MovieCard from "./components/MovieCard.jsx";
 import {useDebounce} from "react-use";
 import {getTrendingMovies, updateSearchCount} from "../appwrite.js";
+import {SpeedInsights} from "@vercel/speed-insights/react";
 
 const API_BASE_URL = "https://api.themoviedb.org/3/";
 
@@ -28,7 +29,7 @@ function App() {
 
     const [trendingMovies, setTrendingMovies] = useState([]);
     const [loadingTrending, setLoadingTrending] = useState(false);
-    const [errorMessageTrending, setErrorMessageTrending] = useState('');
+    const [, setErrorMessageTrending] = useState('');
 
 
 
@@ -105,6 +106,7 @@ function App() {
     return (
         <main className="pattern">
             <div className="wrapper">
+                <SpeedInsights/>
                 <header>
                     <img src="/hero.png" alt=""/>
                     <h1>Find <span className="text-gradient">Movies</span> You'll Enjoy Without Hassle</h1>
