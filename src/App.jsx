@@ -114,25 +114,26 @@ function App() {
 
 
                 <section className="trending">
-                    <h2>Trending Movies</h2>
+
+                    {!loadingTrending && trendingMovies.length > 0 && (
+                        <h2>Trending Movies</h2>
+                    )}
+
                     {
                         loadingTrending ?
                             <Spinner/>
-                            : errorMessageTrending ? (
-                                    <p className="text-red-500">{errorMessageTrending}</p>
-                                )
-                                :
+                            :
 
-                                trendingMovies.length > 0 && (
-                                    <ul>
-                                        {trendingMovies.map((movie, index) => (
-                                            <li key={movie.$id}>
-                                                <p>{index + 1}</p>
-                                                <img src={movie.poster_url} alt={movie.title}/>
-                                            </li>
-                                        ))}
-                                    </ul>
-                                )
+                            trendingMovies.length > 0 && (
+                                <ul>
+                                    {trendingMovies.map((movie, index) => (
+                                        <li key={movie.$id}>
+                                            <p>{index + 1}</p>
+                                            <img src={movie.poster_url} alt={movie.title}/>
+                                        </li>
+                                    ))}
+                                </ul>
+                            )
                     }
                 </section>
                 <section className="all-movies">
