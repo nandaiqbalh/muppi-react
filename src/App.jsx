@@ -6,6 +6,7 @@ import MovieCard from "./components/MovieCard.jsx";
 import {useDebounce} from "react-use";
 import {getTrendingMovies, updateSearchCount} from "../appwrite.js";
 import {SpeedInsights} from "@vercel/speed-insights/react";
+import {Analytics} from "@vercel/analytics/react";
 
 const API_BASE_URL = "https://api.themoviedb.org/3/";
 
@@ -107,6 +108,7 @@ function App() {
         <main className="pattern">
             <div className="wrapper">
                 <SpeedInsights/>
+                <Analytics/>
                 <header>
                     <img src="/hero.png" alt=""/>
                     <h1>Find <span className="text-gradient">Movies</span> You'll Enjoy Without Hassle</h1>
